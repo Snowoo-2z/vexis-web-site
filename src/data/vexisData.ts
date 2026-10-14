@@ -79,7 +79,7 @@ export const ROSTER_TIERS: RosterTier[] = [
     index: 'PALIER 04',
     title: '0 - 999 PR',
     prRange: '0 À 999 PR',
-    description: 'Palier de développement VEXIS — 3 joueurs actifs et 2 places disponibles.',
+    description: 'Palier de développement VEXIS - 3 joueurs actifs et 2 places disponibles.',
     slots: [
       {
         id: 'slot-0-1',

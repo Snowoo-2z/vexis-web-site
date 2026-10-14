@@ -82,8 +82,8 @@ export const HeroFourTiles: React.FC<HeroFourTilesProps> = ({ onSelectTile }) =>
                 ROSTER
               </h2>
               <p className="text-sm text-[#12161A]/80 leading-relaxed max-w-xl">
-                Effectif officiel VEXIS réparti par paliers de PR (+5000 PR, 2500–4999 PR,
-                1000–2499 PR et 0–999 PR).
+                Effectif officiel VEXIS réparti par paliers de PR (+5000 PR, 2500-4999 PR,
+                1000-2499 PR et 0-999 PR).
               </p>
             </div>
 

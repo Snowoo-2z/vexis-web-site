@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono-tech text-[11px] text-[#E1ECFC]/55">
           <p>© {new Date().getFullYear()} VEXIS E-SPORT. TOUS DROITS RÉSERVÉS.</p>
           <p className="max-w-xl sm:text-right">
-            Site officiel VEXIS — Non affilié à Epic Games, Inc.
+            Site officiel VEXIS - Non affilié à Epic Games, Inc.
           </p>
         </div>
       </div>
