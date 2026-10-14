@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vexis-ice: #E1ECFC;
+  --vexis-paper: #EDF3FE;
+  --vexis-surface: #D5E3F9;
+  --vexis-line: #B6C8E6;
+  --vexis-carbon: #0B0D0D;
+  --vexis-slate: #3E4C63;
+  --vexis-cobalt: #1D4ED8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--vexis-ice);
+  color: var(--vexis-carbon);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tactile architectural paper & subtle print grain — anchors the visual in physical reality */
+.vexis-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.042'/%3E%3C/svg%3E");
+}
+
+/* Subtle drafting grid inspired by vexis baniere.png */
+.vexis-draft-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 13, 13, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 13, 13, 0.045) 1px, transparent 1px);
+}
+
+/* Chamfered corners inspired by official VEXIS banner geometry */
+.chamfer-tr {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+.chamfer-tl-br {
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+
+.chamfer-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+}
+
+/* Architectural Tile transition — restrained, mechanical, zero flashy glow */
+.vexis-tile {
+  position: relative;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 180ms ease,
+              border-color 180ms ease,
+              box-shadow 180ms ease;
+}
+
+.vexis-tile:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px #0B0D0D;
+}
+
+.vexis-tile:active {
+  transform: translate(0px, 0px);
+  box-shadow: 1px 1px 0px 0px #0B0D0D;
+}
+
+/* Strict typographic discipline */
+.font-display-tight {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E1ECFC;
+  border-left: 1px solid rgba(11, 13, 13, 0.15);
+}
+::-webkit-scrollbar-thumb {
+  background: #0B0D0D;
+}
