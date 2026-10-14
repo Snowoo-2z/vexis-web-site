@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: vexis-web-site
+    name: vexis
     runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
