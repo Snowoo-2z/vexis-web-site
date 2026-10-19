@@ -179,15 +179,17 @@ export const HeroFourTiles: React.FC<HeroFourTilesProps> = ({ onSelectTile }) =>
                 RÉSEAUX
               </h2>
               <p className="text-sm text-[#12161A]/80 leading-relaxed">
-                Suivez les vidéos, annonces et contenus officiels de VEXIS sur notre chaîne YouTube{' '}
-                <strong>{OFFICIAL_LINKS.youtubeHandle}</strong>.
+                Suivez les vidéos, clips et annonces officielles de VEXIS sur{' '}
+                <strong>X</strong>, <strong>TikTok</strong> et <strong>YouTube</strong>.
               </p>
             </div>
 
             <div className="pt-4 border-t border-[#0B0D0D]/15 flex flex-wrap items-center justify-between gap-3">
-              <span className="px-2.5 py-0.5 bg-[#E1ECFC] border border-[#0B0D0D]/25 font-mono-tech text-[11px]">
-                YOUTUBE {OFFICIAL_LINKS.youtubeHandle}
-              </span>
+              <div className="flex flex-wrap items-center gap-1.5 font-mono-tech text-[11px]">
+                <span className="px-2 py-0.5 bg-[#E1ECFC] border border-[#0B0D0D]/25">X</span>
+                <span className="px-2 py-0.5 bg-[#E1ECFC] border border-[#0B0D0D]/25">TIKTOK</span>
+                <span className="px-2 py-0.5 bg-[#E1ECFC] border border-[#0B0D0D]/25">YOUTUBE</span>
+              </div>
               <span className="inline-flex items-center gap-1.5 font-mono-tech text-xs font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
                 <span>NOS RÉSEAUX</span>
                 <ArrowUpRight className="w-4 h-4" />

@@ -10,6 +10,7 @@ export interface RosterTier {
   id: string;
   index: string;
   title: string;
+  roleLabel?: string;
   prRange: string;
   description: string;
   slots: RosterSlot[];
@@ -20,6 +21,10 @@ export const OFFICIAL_LINKS = {
   discordDisplay: 'discord.gg/frgKErUGK6',
   youtube: 'https://www.youtube.com/@Vexis_E-sport/',
   youtubeHandle: '@Vexis_E-sport',
+  x: 'https://x.com/VexisEsport26',
+  xHandle: '@VexisEsport26',
+  tiktok: 'https://www.tiktok.com/@vexisesport26',
+  tiktokHandle: '@vexisesport26',
 };
 
 export const ROSTER_TIERS: RosterTier[] = [
@@ -78,32 +83,66 @@ export const ROSTER_TIERS: RosterTier[] = [
     id: 'tier-0-999',
     index: 'PALIER 04',
     title: '0 - 999 PR',
+    roleLabel: 'Joueur Grinder',
     prRange: '0 À 999 PR',
-    description: 'Palier de développement VEXIS - 3 joueurs actifs et 2 places disponibles.',
+    description: 'Palier Joueur Grinder VEXIS - 8 joueurs actifs.',
     slots: [
       {
         id: 'slot-0-1',
         status: 'OCCUPÉ',
-        pseudo: 'NAX ツ 1',
-        pr: '36 PR',
-        note: 'Joueur Officiel VEXIS',
+        pseudo: 'VEXIS tyfyyx!!',
+        pr: '63 PR',
+        note: 'Joueur Grinder VEXIS',
       },
       {
         id: 'slot-0-2',
         status: 'OCCUPÉ',
-        pseudo: 'ティクス',
-        pr: '0 PR',
-        note: 'Joueur Officiel VEXIS',
+        pseudo: 'ReYz Frailer',
+        pr: '50 PR',
+        note: 'Joueur Grinder VEXIS',
       },
       {
         id: 'slot-0-3',
         status: 'OCCUPÉ',
-        pseudo: 'Syk 🌀',
-        pr: '0 PR',
-        note: 'Joueur Officiel VEXIS',
+        pseudo: 'HYR NAX ツ 1',
+        pr: '36 PR',
+        note: 'Joueur Grinder VEXIS',
       },
-      { id: 'slot-0-4', status: 'LIBRE' },
-      { id: 'slot-0-5', status: 'LIBRE' },
+      {
+        id: 'slot-0-4',
+        status: 'OCCUPÉ',
+        pseudo: 'VEXIS | 𝒀𝒁𝑶𝑶',
+        pr: '0 PR',
+        note: 'Joueur Grinder VEXIS',
+      },
+      {
+        id: 'slot-0-5',
+        status: 'OCCUPÉ',
+        pseudo: 'by_itachi',
+        pr: '0 PR',
+        note: 'Joueur Grinder VEXIS',
+      },
+      {
+        id: 'slot-0-6',
+        status: 'OCCUPÉ',
+        pseudo: 'Valco',
+        pr: '0 PR',
+        note: 'Joueur Grinder VEXIS',
+      },
+      {
+        id: 'slot-0-7',
+        status: 'OCCUPÉ',
+        pseudo: 'VEXIS GAKRO!',
+        pr: '0 PR',
+        note: 'Joueur Grinder VEXIS',
+      },
+      {
+        id: 'slot-0-8',
+        status: 'OCCUPÉ',
+        pseudo: 'EU poncho',
+        pr: '0 PR',
+        note: 'Joueur Grinder VEXIS',
+      },
     ],
   },
 ];

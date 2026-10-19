@@ -11,6 +11,46 @@ export const ReseauxSection: React.FC<ReseauxSectionProps> = ({
   onCopyText,
   copiedText,
 }) => {
+  const networks = [
+    {
+      id: 'x',
+      tag: 'X (TWITTER)',
+      badge: 'COMPTE OFFICIEL',
+      handle: OFFICIAL_LINKS.xHandle,
+      url: OFFICIAL_LINKS.x,
+      description: 'Annonces officielles, suivi du roster et actualités en direct de VEXIS.',
+      cta: 'SUIVRE SUR X',
+    },
+    {
+      id: 'tiktok',
+      tag: 'TIKTOK',
+      badge: 'COMPTE OFFICIEL',
+      handle: OFFICIAL_LINKS.tiktokHandle,
+      url: OFFICIAL_LINKS.tiktok,
+      description: 'Clips Fortnite des joueurs du roster, highlights et teasers VEXIS.',
+      cta: 'VOIR LE TIKTOK',
+    },
+    {
+      id: 'youtube',
+      tag: 'YOUTUBE',
+      badge: 'CHAÎNE OFFICIELLE',
+      handle: OFFICIAL_LINKS.youtubeHandle,
+      url: OFFICIAL_LINKS.youtube,
+      description: 'Vidéos officielles, présentations du roster et annonces VEXIS.',
+      cta: 'ACCÉDER À YOUTUBE',
+    },
+    {
+      id: 'discord',
+      tag: 'DISCORD',
+      badge: 'SERVEUR OFFICIEL',
+      handle: OFFICIAL_LINKS.discordDisplay,
+      url: OFFICIAL_LINKS.discord,
+      description:
+        'Rejoignez la communauté VEXIS et postulez directement pour les places disponibles dans notre roster.',
+      cta: 'REJOINDRE LE DISCORD',
+    },
+  ];
+
   return (
     <section
       id="reseaux"
@@ -30,116 +70,66 @@ export const ReseauxSection: React.FC<ReseauxSectionProps> = ({
 
           <div className="lg:col-span-5 flex flex-col sm:items-end justify-end">
             <p className="text-sm text-[#12161A]/80 sm:text-right max-w-md">
-              Retrouvez nos liens officiels pour suivre l’actualité et les vidéos de la structure
-              VEXIS.
+              Retrouvez nos liens officiels sur X, TikTok, YouTube et Discord pour suivre toute
+              l’actualité de VEXIS.
             </p>
           </div>
         </div>
 
-        {/* Official Channels Cards */}
+        {/* Official Channels Grid (4 Cards) */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Card 1: YouTube Officiel */}
-          <article className="bg-[#EDF3FE] border-2 border-[#0B0D0D] flex flex-col justify-between">
-            <div>
-              <div className="px-6 py-3.5 bg-[#0B0D0D] text-[#E1ECFC] flex items-center justify-between font-mono-tech text-xs">
-                <span>YOUTUBE</span>
-                <span className="px-2 py-0.5 bg-[#E1ECFC]/15 text-[#E1ECFC] text-[10px]">
-                  CHAÎNE OFFICIELLE
-                </span>
+          {networks.map((net) => (
+            <article
+              key={net.id}
+              className="bg-[#EDF3FE] border-2 border-[#0B0D0D] flex flex-col justify-between"
+            >
+              <div>
+                <div className="px-6 py-3.5 bg-[#0B0D0D] text-[#E1ECFC] flex items-center justify-between font-mono-tech text-xs">
+                  <span>{net.tag}</span>
+                  <span className="px-2 py-0.5 bg-[#E1ECFC]/15 text-[#E1ECFC] text-[10px]">
+                    {net.badge}
+                  </span>
+                </div>
+
+                <div className="p-6 sm:p-8 space-y-3">
+                  <h3 className="font-display-tight text-2xl sm:text-3xl font-bold text-[#0B0D0D]">
+                    {net.handle}
+                  </h3>
+                  <p className="text-sm text-[#12161A]/80 leading-relaxed">{net.description}</p>
+                </div>
               </div>
 
-              <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="font-display-tight text-2xl sm:text-3xl font-bold text-[#0B0D0D]">
-                  {OFFICIAL_LINKS.youtubeHandle}
-                </h3>
-                <p className="text-sm text-[#12161A]/80 leading-relaxed">
-                  Vidéos officielles de la structure, présentations du roster et annonces VEXIS.
-                </p>
+              <div className="px-6 py-4 border-t border-[#0B0D0D]/15 bg-[#EDF3FE] flex flex-wrap items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={() => onCopyText(net.url, `LIEN ${net.tag}`)}
+                  className="min-h-[42px] px-3.5 py-2 border border-[#0B0D0D]/30 bg-[#E1ECFC] hover:border-[#0B0D0D] font-mono-tech text-xs flex items-center gap-1.5"
+                >
+                  {copiedText === net.url ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>COPIÉ</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>COPIER LE LIEN</span>
+                    </>
+                  )}
+                </button>
+
+                <a
+                  href={net.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="min-h-[42px] px-5 py-2 bg-[#0B0D0D] text-[#E1ECFC] hover:bg-[#1D4ED8] transition-colors font-mono-tech text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                >
+                  <span>{net.cta}</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
               </div>
-            </div>
-
-            <div className="px-6 py-4 border-t border-[#0B0D0D]/15 bg-[#EDF3FE] flex flex-wrap items-center justify-between gap-3">
-              <button
-                type="button"
-                onClick={() => onCopyText(OFFICIAL_LINKS.youtube, 'LIEN YOUTUBE')}
-                className="min-h-[42px] px-3.5 py-2 border border-[#0B0D0D]/30 bg-[#E1ECFC] hover:border-[#0B0D0D] font-mono-tech text-xs flex items-center gap-1.5"
-              >
-                {copiedText === OFFICIAL_LINKS.youtube ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>COPIÉ</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>COPIER LE LIEN</span>
-                  </>
-                )}
-              </button>
-
-              <a
-                href={OFFICIAL_LINKS.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="min-h-[42px] px-5 py-2 bg-[#0B0D0D] text-[#E1ECFC] hover:bg-[#1D4ED8] transition-colors font-mono-tech text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
-              >
-                <span>ACCÉDER À YOUTUBE</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-          </article>
-
-          {/* Card 2: Discord Officiel */}
-          <article className="bg-[#EDF3FE] border-2 border-[#0B0D0D] flex flex-col justify-between">
-            <div>
-              <div className="px-6 py-3.5 bg-[#0B0D0D] text-[#E1ECFC] flex items-center justify-between font-mono-tech text-xs">
-                <span>DISCORD</span>
-                <span className="px-2 py-0.5 bg-[#E1ECFC]/15 text-[#E1ECFC] text-[10px]">
-                  SERVEUR OFFICIEL
-                </span>
-              </div>
-
-              <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="font-display-tight text-2xl sm:text-3xl font-bold text-[#0B0D0D]">
-                  {OFFICIAL_LINKS.discordDisplay}
-                </h3>
-                <p className="text-sm text-[#12161A]/80 leading-relaxed">
-                  Rejoignez la communauté VEXIS et postulez directement pour les places disponibles
-                  dans notre roster.
-                </p>
-              </div>
-            </div>
-
-            <div className="px-6 py-4 border-t border-[#0B0D0D]/15 bg-[#EDF3FE] flex flex-wrap items-center justify-between gap-3">
-              <button
-                type="button"
-                onClick={() => onCopyText(OFFICIAL_LINKS.discord, 'LIEN DISCORD')}
-                className="min-h-[42px] px-3.5 py-2 border border-[#0B0D0D]/30 bg-[#E1ECFC] hover:border-[#0B0D0D] font-mono-tech text-xs flex items-center gap-1.5"
-              >
-                {copiedText === OFFICIAL_LINKS.discord ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>COPIÉ</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>COPIER LE LIEN</span>
-                  </>
-                )}
-              </button>
-
-              <a
-                href={OFFICIAL_LINKS.discord}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="min-h-[42px] px-5 py-2 bg-[#0B0D0D] text-[#E1ECFC] hover:bg-[#1D4ED8] transition-colors font-mono-tech text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
-              >
-                <span>REJOINDRE LE DISCORD</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-          </article>
+            </article>
+          ))}
         </div>
       </div>
     </section>

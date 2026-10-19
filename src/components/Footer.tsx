@@ -91,12 +91,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </span>
               <div className="text-xs text-[#E1ECFC]/80 space-y-2">
                 <a
-                  href={OFFICIAL_LINKS.discord}
+                  href={OFFICIAL_LINKS.x}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 hover:text-white hover:underline"
                 >
-                  <span>DISCORD : {OFFICIAL_LINKS.discordDisplay}</span>
+                  <span>X : {OFFICIAL_LINKS.xHandle}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={OFFICIAL_LINKS.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-white hover:underline"
+                >
+                  <span>TIKTOK : {OFFICIAL_LINKS.tiktokHandle}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
                 <a
@@ -106,6 +115,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   className="flex items-center gap-1.5 hover:text-white hover:underline"
                 >
                   <span>YOUTUBE : {OFFICIAL_LINKS.youtubeHandle}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={OFFICIAL_LINKS.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-white hover:underline"
+                >
+                  <span>DISCORD : {OFFICIAL_LINKS.discordDisplay}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>

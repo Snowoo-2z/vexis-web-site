@@ -107,11 +107,11 @@ export const RosterSection: React.FC = () => {
               >
                 {/* Tier Header Bar */}
                 <div className="px-6 py-4 bg-[#0B0D0D] text-[#E1ECFC] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <IconRoster className="w-5 h-5 text-[#E1ECFC] shrink-0" />
                     <span className="font-mono-tech text-xs opacity-60">{tier.index} //</span>
                     <h3 className="font-display-tight text-xl sm:text-2xl font-bold tracking-tight">
-                      {tier.title}
+                      {tier.roleLabel ? `${tier.roleLabel} - ${tier.title}` : tier.title}
                     </h3>
                   </div>
 
@@ -121,9 +121,11 @@ export const RosterSection: React.FC = () => {
                         {occupiedCount} JOUEUR{occupiedCount > 1 ? 'S' : ''}
                       </span>
                     )}
-                    <span className="px-2.5 py-0.5 border border-[#E1ECFC]/40 text-[#E1ECFC]/85">
-                      {freeCount} @LIBRE
-                    </span>
+                    {freeCount > 0 && (
+                      <span className="px-2.5 py-0.5 border border-[#E1ECFC]/40 text-[#E1ECFC]/85">
+                        {freeCount} @LIBRE
+                      </span>
+                    )}
                   </div>
                 </div>
 
